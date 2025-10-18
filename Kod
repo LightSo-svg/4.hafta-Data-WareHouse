@@ -1,0 +1,49 @@
+
+Create DataBase Data_ware_house_fact
+go
+use Data_ware_house_fact;
+go	
+
+Create table Data_ware_house(
+
+Fact_id int primary key,
+customer_id int,
+day_number int,
+geographic_area int,
+product_code int,
+fact_name varchar(30),
+fact_descpriction varchar(30),
+fact_amount int,
+fact_count int,
+other_fact_details varchar(40));
+
+Create table Customer_Dimension(
+
+customer_id int primary key,
+customer_name varchar(30),
+customer_adress varchar(50),
+other_details varchar(30));
+
+Create table Product_Dimension(
+
+Product_code int primary key,
+Product_Name Varchar(30),
+Product_description varchar(30),
+other_product_details varchar(30));
+
+Create table Date_Dimension(
+
+day_number int primary key,
+day_date datetime,
+week_number int,
+mont_number int,
+year_number int);
+
+
+Create table Geograpich_Dimension(
+
+geographic_area int,
+geographic_area_name varchar(30),
+region varchar(20),
+country varchar(20),
+other_region_details varchar(20));
